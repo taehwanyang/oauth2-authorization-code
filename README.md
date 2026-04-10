@@ -23,7 +23,12 @@
   - 서버 검증
     - code_verifier -> SHA256 -> code_challenge와 비교 후 같으면 통과 다르면 거절
 
-## 테스트
+## 테스트 : curl 클라이언트
+
+```java
+// 이 redirectUri을 활성화
+.redirectUri("http://localhost:9000/callback")
+```
 
 ### 브라우저에 아래 URL 입력
 
@@ -42,4 +47,16 @@ curl -v \
   -d "redirect_uri=http://localhost:9000/callback" \
   -d "code_verifier=dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk" \
   http://localhost:9000/oauth2/token
+```
+
+## 테스트 : Python 클라이언트
+
+```java
+// 이 redirectUri을 활성화
+.redirectUri("http://127.0.0.1:8081/callback")
+```
+
+```shell
+cd client
+python3 client.py
 ```
